@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'hirb'
 
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 gem 'faker'
 
