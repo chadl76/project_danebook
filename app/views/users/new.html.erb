@@ -1,0 +1,68 @@
+<nav class="header">
+	<div class="row top-header-bar">
+		
+		
+		<div class="col-xs-3 signup-text"><h1>Danebook</h1></div>
+		
+
+		<div class="inputs">
+		<p class="email-text">email</p>
+		<div class="col-xs-4 top-email-bar" ><input type="text" class="form-control" aria-label="search" placeholder="search"></div>
+
+		<p class="password-text">password</p>
+		<div class="col-xs-4 top-password-bar"><input type="text" class="form-control" aria-label="search" placeholder="search"></div>
+		<button type="button" class="btn btn-primary btn-small btn-block login-button">Log In</button>
+
+	</div>
+	
+	</div>
+</nav>
+
+
+<div class="container">
+	<div class="row main-text">
+		<div class="col-xs-6">
+			<h1>Connect with all your friends!</h1><br>
+			<ul>
+				<li>See photos and updates in your news feed</li>
+				<br>
+				<li>Post your status for the world to see from you profile</li>
+				<br>
+				<li>Get in touch with your friends by "friending them</li>
+				<br>
+				<li>Like things because you're a positive person!</li>
+
+			</ul>
+			
+		</div>
+
+		<div class="col-xs-6 signup-form">
+			<h1>Sign Up</h1>
+			<div class="form">
+				<%=form_for @user do |u| %>
+
+				
+				<%=u.text_field :first_name, placeholder: "First name", :class=> "first-name-input-text" %>
+				<span class="last-name-input-field"></span>
+				<%=u.text_field :last_name, placeholder: "Last name", :class=>"last-name-input-field" %>
+				<div>
+				<%=u.text_field :email,placeholder: "Email", :class=>"email-input-text" %>
+				</div>
+
+				<div>
+				<%=u.text_field :password, placeholder: "Your New Password", :class=>"password-input-text" %>
+				</div>
+				<div>
+				<%=u.text_field :password_confirmation, placeholder: "Confirm Your Password", :class=>"password-confirmation-input-text" %>
+
+				
+			</div>
+		
+
+				<%= u.submit("Sign", :class=> " signup-button btn btn-block btn-success btn-large") %>
+				<%end %>
+			</div>
+		</div>
+		
+	</div>
+</div>
