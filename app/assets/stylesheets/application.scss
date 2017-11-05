@@ -22,3 +22,122 @@
 	width: 100%;
 	left: 0;
 }
+
+.header-logo {
+	height: 75px;
+	width: 75px;
+	position: relative;
+	top: 12px;
+	left: 220px;
+}
+
+.title-text {
+	color: #FFFFFF;
+	position: relative;
+	top: 12px;
+}
+
+.top-search-bar {
+	position: relative;
+	top: 38px;
+	left: -265px;
+	width: 119%;
+}
+
+.top-bar-name {
+	color: #FFFFFF;
+	position: relative;
+	top: 36px;
+}
+
+.main-pic {
+	padding-top: 100px;
+}
+
+.main-background-logo {
+	width: 108%;
+	position: relative;
+	left: -136px;
+	height: 500px;
+	border: 2px solid;
+
+}
+
+.links-bar {
+	position: relative;
+	left: -121px;
+	border: 1px solid;
+	width: 108%;
+	height: 61px;
+
+}
+
+.timeline-link {
+	border-left: 1px solid;
+	height: 58px;
+	padding-top: 20px;
+	font-weight: inherit;
+	font-size: large;
+
+}
+
+.about-link {
+	border-left: 1px solid;
+	height: 58px;
+	padding-top: 20px;
+	font-weight: inherit;
+	font-size: large;
+}
+
+.photo-link {
+	border-left: 1px solid;
+	height: 58px;
+	padding-top: 20px;
+	font-weight: inherit;
+	font-size: large;
+}
+
+.friend-link {
+	border-left: 1px solid;
+	height: 58px;
+	padding-top: 20px;
+	font-weight: inherit;
+	font-size: large;
+}
+
+.profile-link {
+	border-left: 1px solid;
+	height: 58px;
+	padding-top: 18px;
+	font-weight: inherit;
+	font-size: large;
+}
+
+.avatar-logo {
+	height: 175px;
+	border: 1px solid;
+	position: relative;
+	top: -142px;
+}
+
+.about-title {
+	border: 1px solid;
+	position: relative;
+	top: -92px;
+	left: -120px;
+	width: 108%;
+	background-color: #D3D3D3;
+
+	h1 {
+		padding-left: 168px;
+	}
+}
+
+.bio {
+	border: 1px solid;
+	position: relative;
+	left: -121px;
+	width: 108%;
+	padding-top: 28px;
+	top: -93px;
+}
