@@ -24,11 +24,11 @@
 <div class="container">
 	<div class="row links-bar">
 		<div class="col-xs-2 pic-link"><%= image_tag ('avatar.png'), :class => "avatar-logo" %></div>
-		<div class="col-xs-2 timeline-link text-center"><p>timeline</p></div>
-		<div class="col-xs-2 about-link text-center">about</div>
+		<div class="col-xs-2 timeline-link text-center"><p>Timeline</p></div>
+		<div class="col-xs-2 about-link text-center">About</div>
 		<div class="col-xs-2 photo-link text-center">Photos</div>
 		<div class="col-xs-2 friend-link text-center">Friends</div>
-		<div class="col-xs-2 pull-right profile-link text-right">Edit profile</div>
+		<div class="col-xs-2 pull-right profile-link text-right"><%=link_to "Edit profile" %></div>
 		
 	</div>
 </div>
@@ -36,11 +36,35 @@
 <div class="container">
 	<div class="row about-title">
 		<div class="col-xs-10 text-center"><h1>About</h1></div>
-		<div class="col-xs-2">Edit your profile</div>
+		<div class="col-xs-2"><button type="button" class="btn btn-primary btn-small btn-block edit-button">Edit your profile</button></div>
 	</div>
 
 	<div class="row bio">
-		<div class="col-xs-6">Basic info</div>
-		<div class="col-xs-6"><span>Words</span></div>
+		<div class="col-xs-4 basic-info">
+			<h2>Basic Info</h2>
+			<ul class="list-unstyled">
+				<li>Birthday: <span class="txt0"> June 1st, 1981</span></li>
+				<li>College:<span  class="txt1"> UCLA</span></li>
+				<li>Hometown: <span class="txt2">Los Angeles</span></li>
+				<li>Currently Live: <span class="txt3">New York</span></li>
+				<li><h2>Contact Info</h2></li>
+				<li>Email: <span class="txt4">foo@bar.com</span></li>
+				<li>Phone: <span class="txt5">555-555-5555</span></li>
+			</ul>
+		</div>
+
+		<div class="col-xs-4 words-to-live-by">
+			<h2>Words to live by</h2>
+			<ul class="list-unstyled">
+				<li><p>Lorem ipsum dolor sit amet, consecte</p></li>
+				<li><h2>About Me</h2></li>
+				<li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur</p></li>
+		</ul>
+		</div>
 	</div>
+
 </div>
