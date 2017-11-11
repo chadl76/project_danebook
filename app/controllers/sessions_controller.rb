@@ -11,13 +11,13 @@ class SessionsController < ApplicationController
 			if params[:remember_me]
 				permanent_sign_in(@user)
 			else
-				sign_in(@user)
+			   sign_in(@user)
 			end
 			flash[:success] = "You've successfully signed in"
-			redirect_to about_path
+			redirect_to user_profile_path(@user)
 		else
 			flash.now[:error] = "We couldn't sign you in "
-			redirect_to root_url
+			redirect_to new_user_path
 		end
 	end
 end

@@ -203,14 +203,15 @@
 .password-text {
 	color: #FFFFFF;
 	position: relative;
-	top: -4px;
-	left: 15px;
+	top: -32px;
+	left: 243px;
 }
 
 .top-password-bar {
 	width: 16%;
 	position: relative;
-	top: -10px;
+	top: -28px;
+	left: 704px;
 
 }
 
@@ -224,9 +225,10 @@
 	left: 550px;
 }
 
-.top-email-bar {
+.top-email-bar-session {
 	position: relative;
-	top: 20px;
+	top: 28px;
+	left:13px;
 }
 
 .signup-text {
@@ -239,10 +241,11 @@
 	top: 5px;
 }
 
-.login-button {
+#login-button {
 	width: 5%;
 	position: relative;
-	top: -9px;
+	top: -68px;
+	left: 922px;
 
 }
 
@@ -291,7 +294,7 @@
 	margin-top: 25px;
 }
 
-.signup-button {
+#signup-button {
 	margin-top: 25px;
 }
 

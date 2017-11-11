@@ -14,9 +14,9 @@
 	</div>
 		<p class="password-text">password</p>
 		<div class="top-password-bar"><span>
-		<%= password_field_tag :password_digest %></span>
+		<%= password_field_tag :password %></span>
 	</div>
-		<%= submit_tag "Log In", :class=>"btn btn-primary btn-small btn-block", :id =>"login-button"%>
+		<%= submit_tag "Log In", :class=>"btn btn-primary btn-small btn-block login-button"%>
 		<%end %>
 	</div>
 	
@@ -71,7 +71,7 @@
 
 		
 
-				<%= u.submit("Sign up", :class=> "btn btn-block btn-success btn-large", :id=> "signup-button") %>
+				<%= u.submit("Sign", :class=> " signup-button btn btn-block btn-success btn-large") %>
 				<%end %>
 			</div>
 		</div>

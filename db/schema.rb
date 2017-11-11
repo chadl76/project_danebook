@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105204346) do
+ActiveRecord::Schema.define(version: 20171106002923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "birthday"
+    t.string   "college"
+    t.string   "hometown"
+    t.string   "currently_live"
+    t.string   "phone_number"
+    t.string   "words_to_live_by"
+    t.string   "about_me"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

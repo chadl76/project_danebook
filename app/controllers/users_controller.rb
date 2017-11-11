@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-skip_before_action :require_login, :only => [:new, :create]
+skip_before_action :require_login, :only => [:new, :show]
 
 	def index
 	end
@@ -10,16 +10,39 @@ skip_before_action :require_login, :only => [:new, :create]
 
 	def new
 		@user = User.new
+		@user.build_profile
+
 	end
 
 	def create
 		@user = User.new(user_params)
-		if @user.save
+		if @user.save!
 			flash[:success] = "User created successfully."
-			redirect_to users_path
+			redirect_to user_path(@user)
 		else
+			@user.build_profile
 			flash.now[:error] = "Failed to create user."
 			render :new
+		end
+	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def show
+		@user = User.find(params[:id])
+	end
+
+
+	def update
+		@user = User.find(params[:id])
+		@user.update(user_params)
+
+		if @user.update(user_params)
+			redirect_to about_path
+		else
+			render :edit
 		end
 	end
 
@@ -31,6 +54,34 @@ skip_before_action :require_login, :only => [:new, :create]
 							  :last_name, 
 							  :email, 
 							  :password, 
-							  :password_confirmation)
+							  :password_confirmation, 
+							   :profile_attributes => [
+							   	:id,
+							   	:user_id,
+							  	:birthday,
+							  	:college,
+							  	:hometown,
+							  	:currently_live,
+							  	:phone_number,
+							  	:words_to_live_by,
+							  	:about_me ])
 	end
+
+
+	def profile_params
+		params.require(:user).permit(
+								:id,
+								:user_id,
+							  	:birthday,
+							  	:college,
+							  	:hometown,
+							  	:currently_live,
+							  	:phone_number,
+							  	:words_to_live_by,
+							  	:about_me)
+	end
+
+
+	
+
 end
