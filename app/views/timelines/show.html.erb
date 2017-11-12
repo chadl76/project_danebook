@@ -1,0 +1,114 @@
+<nav class="header">
+	<div class="row top-header-bar">
+		
+		<div class="col-xs-2 "><%= image_tag ('avatar.png'), :class => "header-logo"%></div>
+		
+		<div class="col-xs-3 title-text"><h2>Danebook</h2></div>
+		
+		<div class="col-xs-4"><input type="text" class="form-control top-search-bar" aria-label="search" placeholder="search"></div>
+		
+		<div class="col-xs-2 top-bar-name"><h4><%=@user.first_name%></h4></div>
+
+	</div>
+</nav>
+
+
+<div class="container main-pic">
+	<div class="row">
+		<div class="col-xs-12"><%= image_tag ('autumn.jpg'), :class => 
+			"main-background-logo" %></div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row links-bar">
+		<div class="col-xs-2 pic-link"><%= image_tag ('avatar.png'), :class => "avatar-logo" %></div>
+		<div class="col-xs-2 timeline-link text-center"><p>Timeline</p></div>
+		<div class="col-xs-2 about-link text-center">About</div>
+		<div class="col-xs-2 photo-link text-center">Photos</div>
+		<div class="col-xs-2 friend-link text-center">Friends</div>
+		<div class="col-xs-2 pull-right profile-link text-right"><%=link_to "Edit profile", edit_user_path(@user) %></div>
+		
+	</div>
+</div>
+
+<div class=" container about-wrapper">
+<div class="container">
+	<div class="row about-title">
+		<div class="col-xs-10 text-center"><h1>About</h1></div>
+		<div class="col-xs-2"><button type="button" class="btn btn-primary btn-small btn-block edit-button"><%=link_to "Edit your profile", edit_user_path(@user)%></button></div>
+	</div>
+
+	<div class="row bio">
+		<div class="col-xs-4 basic-info">
+			<h2>Basic Info</h2>
+			<ul class="list-unstyled">
+				<li>Birthday: <span class="txt0"><%=@user.profile.birthday%></span></li>
+				<li>College:<span  class="txt1"> UCLA</span></li>
+				<li>Hometown: <span class="txt2">Los Angeles</span></li>
+				<li>Currently Live: <span class="txt3">New York</span></li>
+				<li><h2>Contact Info</h2></li>
+				<li>Email: <span class="txt4">foo@bar.com</span></li>
+				<li>Phone: <span class="txt5">555-555-5555</span></li>
+			</ul>
+		</div>
+
+		<div class="col-xs-4 words-to-live-by">
+			<h2>Words to live by</h2>
+			<ul class="list-unstyled">
+				<li><p>Lorem ipsum dolor sit amet, consecte</p></li>
+				<li><h2>About Me</h2></li>
+				<li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur</p></li>
+		</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div class="post-form-wrapper">
+<div class="container">
+	<div class="row about-title">
+		<div class="col-xs-10 text-center"><h1>Post</h1></div>
+		<div class="col-xs-2"><button type="button" class="btn btn-primary btn-small btn-block edit-button"><%=link_to "Post", edit_user_path(@user)%></button></div>
+	</div>
+
+		<div class="row">
+			<div class="col-xs-4">
+				<%=form_for @user.posts.new  do |p| %>
+				<%=p.label :title %>
+				<%=p.text_field :title %><br>
+				<%=p.label :body %>
+				<%=p.text_area :body %>
+				<%=p.submit "Create Post"%>
+				<%end %>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div class="post-wrapper">
+<div class="container">
+
+		<%if @user.posts.any? %>
+		<div class="row">
+			<div class="col-xs-4">
+				<% @user.posts.each do |post| %>
+				<ul>
+
+				<li><%=post.title%></li>
+				<li><%=post.body%></li>
+			</ul>
+			</div>
+			<%end %>
+			<%end%>
+			
+		</div>
+	</div>
+</div>

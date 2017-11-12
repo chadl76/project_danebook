@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_secure_password
 	has_one :profile
+	has_many :posts
 	before_create :generate_token
 	validates :first_name, :last_name, :email, :password_confirmation, presence: true
 	validates :password, length: {maximum: 64}, :allow_nil => nil

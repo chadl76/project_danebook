@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-skip_before_action :require_login, :only => [:new, :show]
+#skip_before_action :require_login, :only => [:new, :show]
 
 	def index
 	end
@@ -18,7 +18,8 @@ skip_before_action :require_login, :only => [:new, :show]
 		@user = User.new(user_params)
 		if @user.save!
 			flash[:success] = "User created successfully."
-			redirect_to user_path(@user)
+
+			redirect_to user_timeline_path(@user)
 		else
 			@user.build_profile
 			flash.now[:error] = "Failed to create user."
