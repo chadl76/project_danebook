@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   	resource :profile
   end
 
-  resources :posts, :only => [:create, :new]
+  resources :posts, :only => [:create, :new, :show] do
+    resources :comments
+  end
+  resources :comments
 end
