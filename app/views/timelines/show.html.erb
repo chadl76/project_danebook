@@ -102,8 +102,8 @@
 				<% @user.posts.each do |post| %>
 				<ul>
 
-				<li><%=link_to post.title, post %></li>
-				<li><%=post.body%></li>
+				<li><%=link_to post.title, post %> <%=link_to "like" %></li>
+			
 			</ul>
 			</div>
 			<%end %>

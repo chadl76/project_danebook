@@ -44,13 +44,13 @@
 
 	
 
-	<%=@post.title %>
-	<%=@post.body %>
+	<%=@post.title %><br>
+	<%=@post.body %><br>
 
 
 	<%= form_for @comment, :url => post_comments_path(@post) do |c|%>
-	<%= c.label :comment %>
-	<%= c.text_area :body %>
+	<%= c.label :comment %><br>
+	<%= c.text_area :body %><br>
 	<%= c.submit %>
 	<% end %>
 
