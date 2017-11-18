@@ -47,11 +47,16 @@
 	<%=@post.title %>
 	<%=@post.body %>
 
+	<%if !@comment.any? %>
 
 	<%= form_for @comment, :url => post_comments_path(@post) do |c|%>
 	<%= c.label :comment %>
 	<%= c.text_area :body %>
 	<%= c.submit %>
 	<% end %>
+	<% else %>
+	<%= @comment.count %>
+
+	<%end %>
 
 	<%=@comment.body %>
