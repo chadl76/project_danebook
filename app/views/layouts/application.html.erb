@@ -19,7 +19,12 @@
     <%= link_to "logout", logout_path, :method => :delete %>
     <% else %>
         <%= yield %>
-    
+    <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
     <% end %>
   </body>
 </html>
